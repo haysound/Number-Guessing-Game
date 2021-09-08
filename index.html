@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing</title>
+    <style>
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <h1>Number Guessing Application</h1>
+    <p>Kindly guess a number, input the number in the input box below...</p>
+    <div class="form">
+        <label for="guessNum">Input the guessed number</label>
+        <input type="text" id="guessNum" class="guessNum">
+        <input type = "submit" value = "Submit guess" class = "guessSubmit" id = "submit">
+    </div>
+    <script>
+        //generate the random number between 1-100
+        var randomNumber = Math.floor(Math.random() * 100 +1);
+        console.log(randomNumber);
+
+        document.getElementById("submit").onclick = function(){
+
+            //number guessed by the user
+            var guessedNumber = document.getElementById("guessNum").value;
+            
+            //checking if the random number and the guessed number are same
+            if(randomNumber == guessedNumber){
+                alert("Congratulations!!! \nYou guessed Right!!!");
+            }
+            else if( randomNumber > guessedNumber){
+
+                alert("The number inputed is less than the number \n Kindly try again!!! ");
+
+            }
+            else {
+
+                alert("The number inputed is greater than the number \n Kindly try again!!! ");
+
+            }
+
+        }
+    </script>
+</body>
+</html>
